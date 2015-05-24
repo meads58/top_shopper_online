@@ -1,0 +1,1 @@
+var onlineShopper = angular.module('OnlineShopper',[]);
