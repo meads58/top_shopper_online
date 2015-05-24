@@ -6,18 +6,24 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/productList.js"></script>
+    <script src="js/productListFactory.js"></script>
     <script src="js/onlineShopperController.js"></script>
   </head>
 
   <body ng-controller="OnlineShopperController">
     <main>
-      <table class="productList">
-        <tr ng-repeat="product in productFile">
-          <td>{{product.Price}}</td>
-        </tr>
-      </table>
+      <div class="table-responsive">
+        <table class="table">
+          <tr data-ng-repeat="product in products">
+            <td>{{product.ProductName}}</td>
+            <td>{{product.Category}}</td>
+            <td>{{product.Price}}</td>
+            <td>{{product.QuantityInStock}}</td>
+          </tr>
+        </table>
+      </div>
     </main>
   </body>
 </html>

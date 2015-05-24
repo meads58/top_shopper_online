@@ -1,1 +1,3 @@
-var onlineShopper = angular.module('OnlineShopper',[]);
+var onlineShopper = angular.module('OnlineShopper',['ngRoute']);
+
+

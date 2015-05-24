@@ -1,17 +1,7 @@
-onlineShopper.controller('OnlineShopperController', ['$scope', 'productData', function($scope, productFile){
+onlineShopper.controller('OnlineShopperController', ['$scope','productFile', function($scope,productFile){
 
-  productFile.dataLoad(function(productFile){
-    $scope.productFile = productFile;
+  productFile.get().then(function (products) {
+    $scope.products = products.data.productList;
   });
-
-
-  //[
-  // {
-  // ProductName: "Almond Toe Court Shoes, Patent Black",
-  // Category: "Womens Footwear",
-  // Price: 99.00,
-  // QuantityInStock: 5
-  // }
-  // ]
 
 }]);

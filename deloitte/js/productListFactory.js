@@ -1,7 +1,8 @@
-onlineShopper.factory('productFile', ['$q','$http', function($q, $http) {
+onlineShopper.factory('productFile', function($http){
   return {
-    dataLoad: function(callback) {
-      $http.get('data/productList.json').success(callback);
+    get: function() {
+      return $http.get('data/productList.json')
     }
   };
-}]);
+});
+
