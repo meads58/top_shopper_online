@@ -5,11 +5,6 @@ describe('Viewing products at TopShoppers Online', function() {
     shoppingCart = element.all(by.repeater('shopping in shoppingCart'));
   })
 
-  it("A user can view the product 'Blue Sude Shoes' and its category, price and availability information", function() {
-
-
-  });
-
   it('A user can add blue suede shoes to their shopping cart', function() {
     element(by.id('select_prod_ckbox_1')).click();
     expect(element(by.binding('shopping.ProductName')).getText()).toEqual('Suede Shoes, Blue');

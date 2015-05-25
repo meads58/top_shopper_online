@@ -29,8 +29,8 @@
 I've been advised to use javascript for this tech test so I choose the Angular.js framework for the front-end because I've used it successfully before. Having databinding will be useful for populating the shopping cart, the framework allows you to split out the MVC components and the testing tools are good which makes Angular a solid choice.
 
 ##Design
-* Store product details in a file then used a service to pull them in.
-* A checkbox model was used to select products for the shopping cart.
+* A factory service is used to pull in the product details from the 'productList.json' data file.
+* A checklist model was used to select products for the shopping cart. This give you the functionality to easily add/remove products from the cart all within the product list.
 
 ##Issues
 * Karma unit testing had configuration issues so I focused on the end2end testing for test coverage.
