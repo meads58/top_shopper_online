@@ -1,3 +1,3 @@
-var onlineShopper = angular.module('OnlineShopper',['ngRoute']);
+var onlineShopper = angular.module('OnlineShopper',['ngRoute', "checklist-model"]);
 
 

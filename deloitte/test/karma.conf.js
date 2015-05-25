@@ -7,7 +7,9 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '../',
 
-
+    client: {
+        captureConsole: true
+    },
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
@@ -20,7 +22,7 @@ module.exports = function(config) {
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'js/**/*.js',
-      'test/**/*.spec.js'
+      'test/unit/*.spec.js'
     ],
 
 
