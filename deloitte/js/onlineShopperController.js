@@ -53,7 +53,7 @@ onlineShopper.controller('OnlineShopperController', ['$scope','productFile', fun
     for(i = 0; i < $scope.shoppingCart.length; i++) {
       categoryCheck = checkForFootwear($scope.shoppingCart[i]["Category"])
       if ( categoryCheck === true && total > 75){
-        discount = 35
+        discount = 15
       };
     };
     $scope.calculateTotal

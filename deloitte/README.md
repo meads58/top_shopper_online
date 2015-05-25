@@ -18,6 +18,10 @@
 **Running the tests**
 * webdriver-manager start
 * protractor test/e2e/conf.js
+**Voucher Codes**
+* £5 off with '5iverOff'
+* £10 off for purchase over £50 with '10erOff'
+* £15 off for purchases over £75 and includes footwear in the shopping cart with '15Feet'
 
 ##Approach
 I've been advised to use javascript for this tech test so I choose the Angular.js framework for the front-end because I've used is successfully before, the directives will be good for filtering the products, the framework allows you to split out the MVC components and the testing tools are pretty good.
