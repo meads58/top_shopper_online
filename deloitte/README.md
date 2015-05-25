@@ -26,7 +26,7 @@
 * £15 off for purchases over £75 and includes footwear in the shopping cart with '15Feet'
 
 ##Approach
-I've been advised to use javascript for this tech test so I choose the Angular.js framework for the front-end because I've used is successfully before, the directives will be good for filtering the products, the framework allows you to split out the MVC components and the testing tools are pretty good.
+I've been advised to use javascript for this tech test so I choose the Angular.js framework for the front-end because I've used it successfully before. Having databinding will be good for populating the shopping cart, the framework allows you to split out the MVC components and the testing tools are good.
 
 ##Design
 * Store product details in a file then used a service to pull them in.
