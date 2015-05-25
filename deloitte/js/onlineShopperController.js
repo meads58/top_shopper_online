@@ -33,13 +33,15 @@ onlineShopper.controller('OnlineShopperController', ['$scope','productFile', fun
       case '15Feet' :
         fifteenOff();
         break;
+      default:
+        $scope.text = 'Invalid Code'
     }
     $scope.calculateTotal
   };
 
   fiveOff = function() {
-      discount = 5
-      $scope.calculateTotal()
+    discount = 5
+    $scope.calculateTotal()
   };
 
   tenOff = function() {

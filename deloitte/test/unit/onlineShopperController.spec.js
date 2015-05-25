@@ -7,8 +7,7 @@ describe('OnlineShopperController', function() {
     ctrl = $controller('OnlineShopperController');
   }));
 
-  it('initialises with an empty search result and term', function() {
-    expect(ctrl.searchResult).toBeUndefined();
-    expect(ctrl.searchTerm).toBeUndefined();
+  it('calculates the total price', function() {
+
   });
 });

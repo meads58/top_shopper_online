@@ -11,13 +11,6 @@ describe('factory: productFile', function() {
     expect(factory.get).toBeDefined();
   });
 
-  it('returns search results', function() {
-    factory.get()
-    .then(function(response) {
-      expect(response.data.productList[0]).toEqual('items')
-    })
-  });
-
 });
 
 
