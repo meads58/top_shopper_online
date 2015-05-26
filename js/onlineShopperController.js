@@ -1,6 +1,6 @@
 onlineShopper.controller('OnlineShopperController', ['$scope','productFile', function($scope,productFile){
-  var discount = 0
-  var total = 0.00;
+  $scope.discount = 0
+  $scope.total = 0.00;
   $scope.text = ''
   $scope.shoppingCart = [];
 
@@ -19,21 +19,21 @@ onlineShopper.controller('OnlineShopperController', ['$scope','productFile', fun
   };
 
   $scope.calculateTotal = function() {
-    total = $scope.shoppingCart.reduce(function (a, b) { return a + b.Price; }, 0);
-    total = total - discount
-    return total
+    $scope.total = $scope.shoppingCart.reduce(function (a, b) { return a + b.Price; }, 0);
+    $scope.total = $scope.total - $scope.discount
+    return $scope.total
   }
 
   $scope.submit = function() {
     switch($scope.text) {
       case '5iverOff' :
-        fiveOff();
+        $scope.fiveOff();
         break;
       case '10erOff' :
-        tenOff();
+        $scope.tenOff();
         break;
       case '15Feet' :
-        fifteenOff();
+        $scope.fifteenOff();
         break;
       default:
         $scope.text = 'Invalid Code'
@@ -41,14 +41,14 @@ onlineShopper.controller('OnlineShopperController', ['$scope','productFile', fun
     $scope.calculateTotal
   };
 
-  fiveOff = function() {
-    discount = 5
+  $scope.fiveOff = function() {
+    $scope.discount = 5
     $scope.calculateTotal()
   };
 
-  tenOff = function() {
-    if (total > 50){
-      discount = 10
+  $scope.tenOff = function() {
+    if ($scope.total > 50){
+      $scope.discount = 10
       $scope.calculateTotal()
     }
   }
@@ -56,8 +56,8 @@ onlineShopper.controller('OnlineShopperController', ['$scope','productFile', fun
   fifteenOff = function() {
     for(i = 0; i < $scope.shoppingCart.length; i++) {
       categoryCheck = checkForFootwear($scope.shoppingCart[i]["Category"])
-      if ( categoryCheck === true && total > 75){
-        discount = 15
+      if ( categoryCheck === true && $scope.total > 75){
+        $scope.discount = 15
       };
     };
     $scope.calculateTotal
