@@ -35,7 +35,7 @@ I've been advised to use javascript for this tech test so I choose the Angular.j
 
 ##Issues
 * Karma unit testing had configuration issues so I focused on the end2end testing for test coverage.
-* The last integration test to check invalid vouchers isn't passing but the functionality is working correctly. I need to investigate how to get the text out of the text field for this test to pass.
+
 
 
 

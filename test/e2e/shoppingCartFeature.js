@@ -71,7 +71,7 @@ describe('Viewing products at TopShoppers Online', function() {
   it("Will display a the message 'Invalid Code' if the entered voucher code is not a valid one.", function() {
     voucherField.sendKeys('testing');
     voucherSubmit.click();
-    expect(voucherField.getText()).toEqual('Invalid Code')
+    expect(voucherField.getAttribute('value')).toEqual('Invalid Code')
   })
 
 });
