@@ -1,5 +1,5 @@
 ##Top Shopper Online
-Web application to allow you to select and add a range of products to a shopping cart. You can also apply vouchers for a discount off the total price.
+A prototype online shopping application for men's and women's clothing and footwear. A user can select a range of products which go into their shopping cart. You can also apply vouchers for a discount off the total price.
 
 ##Technology used
 * node.js
@@ -34,7 +34,7 @@ I've been advised to use javascript for this tech test so I choose the Angular.j
 * A checklist model was used to select products for the shopping cart. This give you the functionality to easily add/remove products from the cart all within the product list.
 
 ##Issues
-* Karma unit testing had configuration issues and I would have used the Jasmine spyOn mocks for some of the tests but I couldn't get this to run as expected. Will continue to investigate how to get this work.
+* Karma unit testing had configuration issues which slowed me down but these are solved. I would have used the Jasmine spyOn mocks for some of the tests but I couldn't get this to run as expected. Will continue to investigate on how to get these working.
 
 
 

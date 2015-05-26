@@ -49,19 +49,42 @@ describe('OnlineShopperController', function() {
     });
 
     it('knows to set the discount to £10 when the cart is over £50', function() {
-      scope.total = 51
+      scope.total = 51;
       scope.tenOff();
       expect(scope.discount).toEqual(10);
     });
 
-    it('knows to keep discount at £0 when the cart is under £50', function() {
-      scope.total = 49
+    it('knows to keep discount at £0 when the cart is £50 or under', function() {
+      scope.total = 50;
       scope.tenOff();
       expect(scope.discount).toEqual(0);
     });
 
-    it('knows to set the discount to £15', function() {
-      scope.text = fifteenOffVoucher
+    it('knows to set the discount to £15 when the cart is over £75 and contains Footwear', function() {
+      scope.total = 76;
+      scope.shoppingCart = [{Category:"Women's Footwear"},{Category: "Women’s Casualwear"}];
+      scope.fifteenOff();
+      expect(scope.discount).toEqual(15);
+    });
+
+    it('knows to keep the discount at £0 when the cart is £75 or under and contains Footwear', function() {
+      scope.total = 75;
+      scope.shoppingCart = [{Category:"Women's Footwear"},{Category: "Women’s Casualwear"}];
+      scope.fifteenOff();
+      expect(scope.discount).toEqual(0);
+    });
+
+    it('knows to keep the discount at £0 when the cart is over £75 and does not contain Footwear', function() {
+      scope.total = 76;
+      scope.shoppingCart = [{Category:"Men’s Casualwear"},{Category: "Women’s Casualwear"}];
+      scope.fifteenOff();
+      expect(scope.discount).toEqual(0);
+    });
+  });
+
+  describe('category check', function() {
+    it("knows when a category is of type 'footwear'", function() {
+      expect(checkForFootwear("Women's Footwear")).toBe(true);
     });
   });
 });
