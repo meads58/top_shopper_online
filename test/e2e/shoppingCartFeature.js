@@ -3,6 +3,8 @@ describe('Viewing products at TopShoppers Online', function() {
   beforeEach(function() {
     browser.get('http://localhost:8081/');
     shoppingCart = element.all(by.repeater('shopping in shoppingCart'));
+    voucherField = element(by.id('voucher'));
+    voucherSubmit = element(by.id('submit_voucher'));
   })
 
   it('A user can add blue suede shoes to their shopping cart', function() {
@@ -27,24 +29,24 @@ describe('Viewing products at TopShoppers Online', function() {
   it("Can take a £5 off voucher for any purchase with code '5iverOff' ", function() {
     element(by.id('select_prod_ckbox_5')).click();
     expect(element(by.css('.totalAmount')).getText()).toEqual('Total Price 167.00');
-    element(by.id('voucher')).sendKeys('5iverOff');
-    element(by.id('submit_voucher')).click();
+    voucherField.sendKeys('5iverOff');
+    voucherSubmit.click();
     expect(element(by.css('.totalAmount')).getText()).toEqual('Total Price 162.00');
   });
 
   it("Can take a £10 off voucher for a purchase over £50 with code '10erOff' ", function() {
     element(by.id('select_prod_ckbox_5')).click();
     expect(element(by.css('.totalAmount')).getText()).toEqual('Total Price 167.00');
-    element(by.id('voucher')).sendKeys('10erOff');
-    element(by.id('submit_voucher')).click();
+    voucherField.sendKeys('10erOff');
+    voucherSubmit.click();
     expect(element(by.css('.totalAmount')).getText()).toEqual('Total Price 157.00');
   });
 
  it("Will not take the £10 off voucher if a purchase is under £50 with code '10erOff' ", function() {
     element(by.id('select_prod_ckbox_1')).click();
     expect(element(by.css('.totalAmount')).getText()).toEqual('Total Price 42.00');
-    element(by.id('voucher')).sendKeys('10erOff');
-    element(by.id('submit_voucher')).click();
+    voucherField.sendKeys('10erOff');
+    voucherSubmit.click();
     expect(element(by.css('.totalAmount')).getText()).toEqual('Total Price 42.00');
   });
 
@@ -52,8 +54,8 @@ describe('Viewing products at TopShoppers Online', function() {
     element(by.id('select_prod_ckbox_0')).click();
     element(by.id('select_prod_ckbox_5')).click();
     expect(element(by.css('.totalAmount')).getText()).toEqual('Total Price 266.00');
-    element(by.id('voucher')).sendKeys('15Feet');
-    element(by.id('submit_voucher')).click();
+    voucherField.sendKeys('15Feet');
+    voucherSubmit.click();
     expect(element(by.css('.totalAmount')).getText()).toEqual('Total Price 251.00');
   });
 
@@ -61,15 +63,15 @@ describe('Viewing products at TopShoppers Online', function() {
     element(by.id('select_prod_ckbox_8')).click();
     element(by.id('select_prod_ckbox_5')).click();
     expect(element(by.css('.totalAmount')).getText()).toEqual('Total Price 206.99');
-    element(by.id('voucher')).sendKeys('15Feet');
-    element(by.id('submit_voucher')).click();
+    voucherField.sendKeys('15Feet');
+    voucherSubmit.click();
     expect(element(by.css('.totalAmount')).getText()).toEqual('Total Price 206.99');
   });
 
   it("Will display a the message 'Invalid Code' if the entered voucher code is not a valid one.", function() {
-    element(by.id('voucher')).sendKeys('testing');
-    element(by.id('submit_voucher')).click();
-    expect(element(by.id('voucher')).getText()).toEqual('Invalid Code')
+    voucherField.sendKeys('testing');
+    voucherSubmit.click();
+    expect(voucherField.getText()).toEqual('Invalid Code')
   })
 
 });
