@@ -53,7 +53,7 @@ onlineShopper.controller('OnlineShopperController', ['$scope','productFile', fun
     }
   }
 
-  fifteenOff = function() {
+  $scope.fifteenOff = function() {
     for(i = 0; i < $scope.shoppingCart.length; i++) {
       categoryCheck = checkForFootwear($scope.shoppingCart[i]["Category"])
       if ( categoryCheck === true && $scope.total > 75){

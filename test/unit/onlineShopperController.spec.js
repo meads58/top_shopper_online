@@ -43,24 +43,24 @@ describe('OnlineShopperController', function() {
       expect(scope.text).toEqual('Invalid Code');
     });
 
-    it('knows to take £5 off the total', function() {
+    it('knows to set the discount to £5', function() {
       scope.fiveOff();
       expect(scope.discount).toEqual(5);
     });
 
-    it('knows to take £10 off the total when the cart is over £50', function() {
+    it('knows to set the discount to £10 when the cart is over £50', function() {
       scope.total = 51
       scope.tenOff();
       expect(scope.discount).toEqual(10);
     });
 
-    it('knows not to take £10 off the total when the cart is under £50', function() {
+    it('knows to keep discount at £0 when the cart is under £50', function() {
       scope.total = 49
       scope.tenOff();
       expect(scope.discount).toEqual(0);
     });
 
-    it('knows when the right £15 off voucher code is entered', function() {
+    it('knows to set the discount to £15', function() {
       scope.text = fifteenOffVoucher
     });
   });

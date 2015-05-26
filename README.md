@@ -34,7 +34,7 @@ I've been advised to use javascript for this tech test so I choose the Angular.j
 * A checklist model was used to select products for the shopping cart. This give you the functionality to easily add/remove products from the cart all within the product list.
 
 ##Issues
-* Karma unit testing had configuration issues and I would have used the Jasmine spyOn mocks for some of the tests but I couldn't get this to run.
+* Karma unit testing had configuration issues and I would have used the Jasmine spyOn mocks for some of the tests but I couldn't get this to run as expected. Will continue to investigate how to get this work.
 
 
 
