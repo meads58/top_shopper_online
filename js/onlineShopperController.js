@@ -7,6 +7,8 @@ onlineShopper.controller('OnlineShopperController', ['$scope','productFile', fun
   $scope.outOfStock = function(product) {
     if (product.QuantityInStock == 0) {
       return true
+    }else{
+      return false
     };
   };
 
