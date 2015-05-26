@@ -1,0 +1,25 @@
+.table-responsive{
+  display: inline-block;
+}
+
+.product-list{
+  width: 80%;
+}
+
+.table-headings{
+   font-weight: bold;
+}
+
+td{
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.store-name{
+  text-align: center;
+  font-size: 250%;
+  font-weight: bold;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
